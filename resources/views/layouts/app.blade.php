@@ -61,22 +61,22 @@
             </ul>
             <ul class="navbar-nav me-auto">
                 <li class="nav-item">
-                    <a class="nav-link"
+                    <a class="nav-link" href="#"
                       >HOME</a
                     >
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link"
+                    <a class="nav-link" href="#"
                       >HOME</a
                     >
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link"
+                    <a class="nav-link" href="#"
                       >HOME</a
                     >
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link"
+                    <a class="nav-link" href="#"
                       >HOME</a
                     >
                   </li>
