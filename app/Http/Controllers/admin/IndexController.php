@@ -3,8 +3,9 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Book;
+use App\Models\category;
 use App\Models\Contact;
-use App\Models\Table;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -56,13 +57,13 @@ class IndexController extends Controller
 
         // dd($users->tables());
         $users = User::with('tables')->where('role', 'user')->get();
-        // $allStatus = ['pending', 'accepted', 'rejected'];
+        $allStatus = ['pending', 'accepted', 'rejected'];
         $allUsers = $users->count();
-        // $allTables = Table::all()->count();
-        // $allContacts = Contact::all()->count();
+        $allBooks = Book::all()->count();
+        $allCategories = category::all()->count();
         // $totalCount = DB::table('table_user')
         //     ->count();
-        return view('layouts.admin.index', compact('users'));
+        return view('layouts.admin.index', compact('allUsers', 'allBooks','allCategories'));
     }
 
     /**
@@ -130,16 +131,16 @@ class IndexController extends Controller
         //     "status" => $request->status,
         //     "datetime" => $request->datetime
         // ]);
-        // $user->tables()->wherePivot('id', '=', $pivotId)->updateExistingPivot($request->table_id, [
-        //     "user_id" => $request->user_id,
-        //     "table_id" => $request->table_id,
-        //     "mobile_number" => $request->mobile_number,
-        //     "guest_number" => $request->guest_number,
-        //     "status" => $request->status,
-        //     "date" => $request->date,
-        //     "time" => $request->time,
-        //     "note" => $request->note
-        // ]);
+        $user->tables()->wherePivot('id', '=', $pivotId)->updateExistingPivot($request->table_id, [
+            "user_id" => $request->user_id,
+            "table_id" => $request->table_id,
+            "mobile_number" => $request->mobile_number,
+            "guest_number" => $request->guest_number,
+            "status" => $request->status,
+            "date" => $request->date,
+            "time" => $request->time,
+            "note" => $request->note
+        ]);
 
         // $user->tables()->wherePivot('id', '=', $pivotId)->detach();
 

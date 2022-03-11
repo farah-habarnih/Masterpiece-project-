@@ -7,16 +7,12 @@
         <div class="col-sm-6 col-xl-3">
 
             <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
-                {{-- <i class="fa fa-chart-line fa-3x text-primary"></i> --}}
-                {{-- <i class="fa fa-tachometer-alt me-2 fa-3x text-primary"></i> --}}
-                {{-- <i class="fa fa-ticket fa-3x text-primary"></i> --}}
-                {{-- <i class="fas fa-ticket-alt me-2 fa-3x text-primary"></i> --}}
                 <a class="nav-item nav-link">
                 <i class="fas fa-calendar-check me-2 fa-3x text-primary"></i>
             </a>
                 <div class="ms-3">
                     <p class="mb-2">Total Categories</p>
-                    {{-- <h6 class="mb-0">{{$allCategories}}</h6> --}}
+                    <h6 class="mb-0">{{$allCategories}}</h6>
                 </div>
             </div>
         </div>
@@ -24,24 +20,23 @@
 
             <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
                 <a href="{{route('admin.users')}}" class="nav-item nav-link">
-                {{-- <i class="fa fa-chart-bar fa-3x text-primary"></i> --}}
                 <i class="fas fa-users me-2 fa-3x text-primary"></i>
             </a>
                 <div class="ms-3">
                     <p class="mb-2">Registered Users</p>
-                    {{-- <h6 class="mb-0">{{$allUsers}}</h6> --}}
+                    <h6 class="mb-0">{{$allUsers}}</h6>
                 </div>
             </div>
         </div>
         <div class="col-sm-6 col-xl-3">
 
             <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
-                {{-- <a href="{{route('admin.tables')}}" class="nav-item nav-link"> --}}
+                <a href="{{route('admin.books')}}" class="nav-item nav-link">
                 <i class="fa fa-table me-2 fa-3x text-primary"></i>
             </a>
                 <div class="ms-3">
                     <p class="mb-2">Total Books</p>
-                    {{-- <h6 class="mb-0">{{$allBooks}}</h6> --}}
+                    <h6 class="mb-0">{{$allBooks}}</h6>
                 </div>
             </div>
         </div>
