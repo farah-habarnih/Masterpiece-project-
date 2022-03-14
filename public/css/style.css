@@ -7,7 +7,7 @@
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
     transition: all 0.4s ease;
-    font-size: 75%;
+    /* font-size: 75%; */
 }
 
 /* ===== Colours ===== */
@@ -80,6 +80,7 @@ nav .nav-bar .logo a {
 }
 
 .nav-bar .nav-links {
+    margin-bottom: 0;
     display: flex;
     align-items: end;
 }
@@ -95,7 +96,7 @@ nav .nav-bar .logo a {
     font-weight: 400;
     color: var(--text-color);
     text-decoration: none;
-    padding: 10px;
+    padding: 1px 7px;
 }
 
 .nav-links li a::before {
@@ -526,7 +527,7 @@ section {
 
 .heading {
     text-align: center;
-    font-size: 4rem;
+    font-size: 2rem;
     color: #333;
     padding: 1rem;
     margin: 2rem 0;
@@ -545,7 +546,7 @@ section {
     color: #fff;
     padding: 0.9rem 3.5rem;
     cursor: pointer;
-    font-size: 1.7rem;
+    /* font-size: 1.7rem; */
 }
 
 .btn-shop:hover {
@@ -626,19 +627,19 @@ header .fa-bars {
 }
 
 .home .content h3 {
-    font-size: 6rem;
+    font-size: 3rem;
     color: #333;
 }
 
 .home .content span {
-    font-size: 3.5rem;
+    font-size: 1.5rem;
     color: #60b3a9;
     padding: 1rem 0;
     line-height: 1.5;
 }
 
 .home .content p {
-    font-size: 1.5rem;
+    font-size: 1.1rem;
     color: #999;
     padding: 1rem 0;
     line-height: 1.5;
@@ -671,7 +672,7 @@ header .fa-bars {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    font-size: 3rem;
+    font-size: 1rem;
     background: #fff;
     width: 100%;
     padding: 1rem 2rem;
@@ -684,12 +685,12 @@ header .fa-bars {
 }
 
 .about .row .content h3 {
-    font-size: 3rem;
+    font-size: 1rem;
     color: #333;
 }
 
 .about .row .content p {
-    font-size: 1.5rem;
+    font-size: 1.1rem;
     color: #999;
     padding: 0.5rem 0;
     padding-top: 1rem;
@@ -697,6 +698,7 @@ header .fa-bars {
 }
 
 .icons-container {
+    font-size: 62.5%;
     background: #eee;
     display: flex;
     flex-wrap: wrap;
@@ -729,7 +731,9 @@ header .fa-bars {
     color: #555;
     font-size: 1.3rem;
 }
-
+.products {
+    font-size: 62.5%;
+}
 .products .box-container {
     display: flex;
     flex-wrap: wrap;
@@ -825,7 +829,9 @@ header .fa-bars {
     font-weight: lighter;
     text-decoration: line-through;
 }
-
+.review {
+    font-size: 62.5%;
+}
 .review .box-container {
     display: flex;
     flex-wrap: wrap;
@@ -884,7 +890,9 @@ header .fa-bars {
     font-size: 1.5rem;
     color: #999;
 }
-
+.contact {
+    font-size: 62.5%;
+}
 .contact .row {
     display: flex;
     flex-wrap: wrap-reverse;
@@ -927,4 +935,38 @@ header .fa-bars {
 .contact .row form textarea {
     height: 15rem;
     resize: none;
+}
+
+.dropdown-toggle {
+    color: white !important;
+}
+.btn-link {
+    display: inline-block;
+    margin-top: 1rem;
+    border-radius: 5rem;
+    background: #333 !important;
+    color: #fff !important;
+    padding: 0.9rem 3.5rem;
+    cursor: pointer;
+}
+.btn-link:hover {
+    background: #60b3a9 !important;
+}
+
+a:hover {
+    text-decoration: none !important;
+    color: white !important;
+}
+
+.btn-primary {
+    display: inline-block;
+    margin-top: 1rem;
+    border-radius: 5rem;
+    background: #333 !important;
+    color: #fff !important;
+    padding: 0.9rem 3.5rem;
+    cursor: pointer;
+}
+.btn-primary:hover {
+    background: #60b3a9 !important;
 }
