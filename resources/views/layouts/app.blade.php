@@ -41,8 +41,8 @@
           </div>
 
           <ul class="nav-links">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About Us</a></li>
+            <li><a href="{{ url('/') }}">Home</a></li>
+            <li><a href="{{ url('/about-us') }}">About Us</a></li>
             <li><a href="#">Shop</a></li>
 
             @guest

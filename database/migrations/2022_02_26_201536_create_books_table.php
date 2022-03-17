@@ -20,6 +20,8 @@ return new class extends Migration
             $table->string('book_name');
             $table->text('description');
             $table->double('price');
+            $table->integer('quantity');
+            $table->string('slug')->unique();
             $table->text('image');
             $table->timestamps();
         });

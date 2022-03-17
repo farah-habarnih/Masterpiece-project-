@@ -16,7 +16,7 @@ use App\Http\Controllers\admin\UserController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+/******* Public Routes *********/
 Route::get('/', function () {
     return view('index');
 });
@@ -33,6 +33,8 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+
+/******* Admin Routes *********/
 Route::middleware('IsAdmin')->group(function () {
     Route::get('/admin/dashboard', [IndexController::class, 'index'])->name('admin.index');
 
