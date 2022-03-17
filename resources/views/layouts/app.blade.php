@@ -80,7 +80,10 @@
             <i class="bx bx-moon moon"></i>
             <i class="bx bx-sun sun"></i>
           </div>
+          <div class="cartBox">
+            <i class="bx bx-cart cart"></i>
 
+          </div>
           <div class="searchBox">
             <div class="searchToggle">
               <i class="bx bx-x cancel"></i>

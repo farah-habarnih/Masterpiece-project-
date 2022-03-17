@@ -50,7 +50,7 @@ body.dark nav {
 nav .nav-bar {
     /* position: relative; */
     height: 100%;
-    max-width: 1000px;
+    max-width: 1300px;
     width: 100%;
     background-color: var(--nav-color);
     margin: 0 auto;
@@ -123,7 +123,8 @@ nav .nav-bar .logo a {
 }
 
 .darkLight-searchBox .dark-light,
-.darkLight-searchBox .searchToggle {
+.darkLight-searchBox .searchToggle,
+.darkLight-searchBox .cartBox {
     height: 40px;
     width: 40px;
     display: flex;
@@ -133,7 +134,8 @@ nav .nav-bar .logo a {
 }
 
 .dark-light i,
-.searchToggle i {
+.searchToggle i,
+.cartBox i {
     position: absolute;
     color: var(--text-color);
     font-size: 22px;
@@ -522,7 +524,7 @@ footer .bottom-details .bottom_text {
 }
 
 section {
-    padding: 2rem 9%;
+    padding: 2rem 9% !important;
 }
 
 .heading {
@@ -644,7 +646,36 @@ header .fa-bars {
     padding: 1rem 0;
     line-height: 1.5;
 }
-
+.home-top {
+    display: flex;
+    align-items: center;
+    min-height: 55vh;
+    /* background: url(../images/home-bg.jpg) no-repeat; */
+    background: url("https://www.cornwallpubliclibrary.org/wp-content/uploads/2014/03/Cornwal-Public-Library-Book-Stack-Header.jpg")
+        no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.home-top .content h3 {
+    max-width: 60rem;
+    font-size: 3rem;
+}
+.home-top .content a {
+    max-width: 60rem;
+    font-size: 1.3rem;
+    color: #60b3a9;
+}
+.register-link {
+    margin-top: 1rem;
+    color: #60b3a9;
+}
+.register-link a {
+    margin-top: 1rem;
+    color: #60b3a9;
+}
+.register-link a:hover {
+    color: black !important;
+}
 .about .row {
     display: flex;
     align-items: center;
@@ -698,10 +729,10 @@ header .fa-bars {
 }
 
 .icons-container {
-    font-size: 62.5%;
+    font-size: 62.5% !important;
     background: #eee;
     display: flex;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     gap: 1.5rem;
     padding-top: 5rem;
     padding-bottom: 5rem;
@@ -714,6 +745,7 @@ header .fa-bars {
     display: flex;
     align-items: center;
     flex: 1 1 25rem;
+    font-size: 62.5% !important;
 }
 
 .icons-container .icons img {
@@ -724,12 +756,12 @@ header .fa-bars {
 .icons-container .icons h3 {
     color: #333;
     padding-bottom: 0.5rem;
-    font-size: 1.5rem;
+    font-size: 1.1rem;
 }
 
 .icons-container .icons span {
     color: #555;
-    font-size: 1.3rem;
+    font-size: 1rem;
 }
 .products {
     font-size: 62.5%;

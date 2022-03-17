@@ -1,6 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
+<section class="home-top" id="home-top">
+    <div class="content">
+      <h3>LOGIN</h3>
+
+      <a href="{{ url('/') }}">HOME / </a><a href="{{ url('/login') }}">Login</a>
+    </div>
+  </section>
 <br>
 <br>
 <div class="container">
@@ -65,6 +72,9 @@
                                     </a>
                                 @endif
                             </div>
+                            <div class="col-md-10 offset-md-4 register-link">
+                            <a href="{{ url('/register') }}">Don't Have an account? Register</a>
+                        </div>
                         </div>
                     </form>
                 </div>
