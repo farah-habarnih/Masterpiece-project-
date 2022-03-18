@@ -4,8 +4,12 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="keywords" content="Ecommerce,book,used book,jordan, social media , sign up, login, " />
+    <meta name="author" content="ShareBook Team" />
+    <meta name="description" content="Over 13 million titles available from the largest seller of used books. Cheap prices on high quality gently used books. Free shipping over $15.">
     <!-- ===== CSS ===== -->
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    <link rel="icon" href="https://img.icons8.com/ios/50/000000/book.png" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
@@ -32,7 +36,7 @@
     <nav>
       <div class="nav-bar">
         <i class="bx bx-menu sidebarOpen"></i>
-        <span class="logo navLogo"><a href="#">ShareBook</a></span>
+        <span class="logo navLogo"><a href="{{ url('/') }}">ShareBook</a></span>
 
         <div class="menu">
           <div class="logo-toggle">
@@ -60,7 +64,7 @@
                 </a>
 
                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                    <a href="{{ url('user-profile') }}" class="dropdown-item">My profile</a>
+                    <a href="{{ url('profile') }}" class="dropdown-item">My profile</a>
                      <a class="dropdown-item" href="{{ route('logout') }}"
                     onclick="event.preventDefault();
                             document.getElementById('logout-form').submit();">
@@ -84,7 +88,7 @@
             <i class="bx bx-cart cart"></i>
 
           </div>
-          <div class="searchBox">
+          {{-- <div class="searchBox">
             <div class="searchToggle">
               <i class="bx bx-x cancel"></i>
               <i class="bx bx-search search"></i>
@@ -94,7 +98,7 @@
               <input type="text" placeholder="Search..." />
               <i class="bx bx-search"></i>
             </div>
-          </div>
+          </div> --}}
         </div>
       </div>
     </nav>

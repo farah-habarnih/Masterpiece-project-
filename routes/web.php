@@ -27,7 +27,8 @@ Route::get('/about-us', function () {
     return view('about');
 });
 
-
+Route::get('/profile', [App\Http\Controllers\ProfileController::class, 'profile']);
+Route::post('/profile-update', [App\Http\Controllers\ProfileController::class, 'update'])->name('users.edit');
 
 Auth::routes();
 
