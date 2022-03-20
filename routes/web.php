@@ -4,6 +4,7 @@ use App\Http\Controllers\admin\BookController;
 use App\Http\Controllers\admin\CategoryController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ShopController;
 use App\Http\Controllers\admin\IndexController;
 use App\Http\Controllers\admin\UserController;
 /*
@@ -17,9 +18,9 @@ use App\Http\Controllers\admin\UserController;
 |
 */
 /******* Public Routes *********/
-Route::get('/', function () {
-    return view('index');
-});
+// Route::get('/', function () {
+//     return view('index');
+// });
 Route::get('/home', function () {
     return view('home');
 });
@@ -29,6 +30,14 @@ Route::get('/about-us', function () {
 
 Route::get('/profile', [App\Http\Controllers\ProfileController::class, 'profile']);
 Route::post('/profile-update', [App\Http\Controllers\ProfileController::class, 'update'])->name('users.edit');
+
+//shop routes
+Route::get('/', [ShopController::class,'index'])->name('index');
+// Route::get('/home', [ShopController::class,'index']);
+// Route::get('/shop', [ShopController::class,'productsList']);
+// Route::get('/shop/category/{category:slug}', [ShopController::class,'productsCategoryList']);
+// Route::get('/shop/product/{product:slug}', [ShopController::class,'singleProduct']);
+
 
 Auth::routes();
 

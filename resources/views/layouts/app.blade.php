@@ -28,7 +28,6 @@
     rel="stylesheet"
     id="bootstrap-css"
   />
-
     <title>ShareBook</title>
   </head>
   <body>
@@ -178,6 +177,7 @@
     {{-- <script src="{{asset('admin/js/main.js')}}"></script> --}}
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> --}}
     {{-- <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script> --}}
     <script src="{{asset('js/app.js') }}"></script>
