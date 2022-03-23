@@ -1447,3 +1447,32 @@ input {
 .fa {
     color: #ff5722;
 }
+.shop-header {
+    background-color: #fff5fa;
+    color: #008575;
+    padding: 1rem;
+    font-size: 1rem;
+}
+.categories-list {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.catagories-menu ul li {
+    text-decoration: none;
+    color: black;
+    list-style: none;
+}
+.catagories-menu ul li a {
+    text-decoration: none;
+    color: black;
+}
+.catagories-menu ul li a:hover {
+    text-decoration: none;
+    color: #008575 !important;
+    font-size: 1.2rem;
+}
+.header-category {
+    margin: 0.8rem 6rem;
+    font-size: 1.3rem;
+}

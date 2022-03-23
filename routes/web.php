@@ -33,10 +33,20 @@ Route::post('/profile-update', [App\Http\Controllers\ProfileController::class, '
 
 //shop routes
 Route::get('/', [ShopController::class,'index'])->name('index');
-// Route::get('/home', [ShopController::class,'index']);
-// Route::get('/shop', [ShopController::class,'productsList']);
-// Route::get('/shop/category/{category:slug}', [ShopController::class,'productsCategoryList']);
-// Route::get('/shop/product/{product:slug}', [ShopController::class,'singleProduct']);
+Route::get('/home', [ShopController::class,'index']);
+Route::get('/shop', [ShopController::class,'productsList']);
+Route::get('/shop/category/{category:slug}', [ShopController::class,'productsCategoryList']);
+Route::get('/shop/book/{book:slug}', [ShopController::class,'singleProduct']);
+
+//cart routes
+// Route::get('/cart/view-cart', [CartController::class,'viewCart']);
+// Route::post('/cart/add-to-cart/{product_id}', [CartController::class,'addToCart'])->name('add-to-cart');
+// Route::get('/cart/update-cart', [CartController::class,'updateCart']);
+// Route::get('/cart/remove-item/{item_id}', [CartController::class,'removeItem']);
+// Route::get('/cart/checkout',[CartController::class,'checkout'])->name('checkout')->middleware('auth');
+// Route::post('/cart/checkout',[CartController::class,'placeOrder'])->name('place-order')->middleware('auth');
+// Route::get('/orders', [OrderController::class,'index']);
+
 
 
 Auth::routes();

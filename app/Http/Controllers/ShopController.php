@@ -27,7 +27,8 @@ class ShopController extends Controller
     public function productsList()
     {
         $books = Book::where('quantity', '<>', '')->get();
-        return view('list-products', compact('books'));
+        $categories = Category::all();
+        return view('list-products', compact('books','categories'));
     }
 
     /**
@@ -47,7 +48,7 @@ class ShopController extends Controller
         $books = Book::where('quantity', '<>', '0')
             ->where('category_id', $category->id)->get();
 
-        return view('list-category-products', compact('books', 'categories'));
+        return view('list-category-products', compact('books', 'categories','category'));
 
     }
 }
