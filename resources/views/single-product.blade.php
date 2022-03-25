@@ -85,7 +85,7 @@
 
                         <!-- Add to Cart Form -->
                         <form class="cart clearfix" method="post"
-                        {{-- action="{{route('add-to-cart',['book_id' =>$book['id']])}}" --}}
+                        action="{{route('add-to-cart',['book_id' =>$book['id']])}}"
                         >
                            @csrf
                             <div class="cart-btn d-flex mb-50">

@@ -47,7 +47,8 @@ class CategoryController extends Controller
 
 
         Category::create([
-            'category_name' => $request->category_name,
+            'slug' => $request->slug,
+            'img_src' => $request->img_src,
         ]);
         return redirect()->back()->with(['message' => 'Category added successfully']);
     }
@@ -89,7 +90,8 @@ class CategoryController extends Controller
         //
             $category = Category::find($id);
             $category->update([
-                'category_name' => $request->category_name,
+                'slug' => $request->slug,
+                'img_src' => $request->img_src,
             ]);
             return redirect()->back()->with(['message' => 'edit was successful']);
 

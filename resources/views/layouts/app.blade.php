@@ -84,7 +84,7 @@
             <i class="bx bx-sun sun"></i>
           </div>
           <div class="cartBox">
-            <i class="bx bx-cart cart"></i>
+            <a href="/cart/view-cart"> <i class="bx bx-cart cart"><span>{{Session::get('cart')?count(Session::get('cart')): 0}}</span></i></a>
 
           </div>
           {{-- <div class="searchBox">

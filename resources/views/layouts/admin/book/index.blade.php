@@ -14,6 +14,7 @@
                     <tr class="text-dark">
                         <th scope="col">Book Name</th>
                         <th scope="col">description</th>
+                        <th scope="col">Category Name</th>
                         <th scope="col">price</th>
                         <th scope="col">image</th>
                         <th scope="col">Edit</th>
@@ -25,10 +26,11 @@
                     <tr>
                         <td>{{$book->book_name}}</td>
                         <td>{{$book->description}}</td>
+                        <td>{{$book->category->slug}}</td>
                         <td>{{$book->price}}</td>
                         <td><img src={{$book->image}}></td>
                         <td>
-                            <form action="{{route('admin.books.edit', $book)}}" method="get">
+                            <form action="{{route('admin.books.edit', $book->id)}}" method="get">
                                 @csrf
                                 @method('get')
                                 <input type="submit" class="btn btn-success" value="Edit">

@@ -8,7 +8,7 @@
         Lorem ipsum dolor sit amet consectetur <br> adipisicing elit. voluptate
         dolorem pariatur.
       </p>
-      <a href="#" class="btn-shop">shop now</a>
+      <a href="{{ url('/shop') }}" class="btn-shop">shop now</a>
     </div>
   </section>
 

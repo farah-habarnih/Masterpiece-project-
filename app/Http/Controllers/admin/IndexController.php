@@ -56,7 +56,7 @@ class IndexController extends Controller
         // dd($allUsers);
 
         // dd($users->tables());
-        $users = User::with('tables')->where('role', 'user')->get();
+        $users = User::where('role', 'user')->get();
         $allStatus = ['pending', 'accepted', 'rejected'];
         $allUsers = $users->count();
         $allBooks = Book::all()->count();

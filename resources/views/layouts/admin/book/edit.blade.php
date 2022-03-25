@@ -14,13 +14,14 @@
                         <th scope="col">Book Name<span style="color: red">*</span></th>
                         <th scope="col">description<span style="color: red">*</span></th>
                         <th scope="col">price<span style="color: red">*</span></th>
+                        <th scope="col">quantity<span style="color: red">*</span></th>
                         <th scope="col">image <small style="color: red"></small></th>
-                        <th scope="col">category_id <small style="color: red"></small></th>
+                        <th scope="col">category name <small style="color: red"></small></th>
                         <th scope="col"></th>
                     </tr>
                 </thead>
                 <tbody>
-                    <form action="{{route('admin.books.update', $book)}}" method="POST">
+                    <form action="{{route('admin.books.update', $book->id)}}" method="POST">
                         @csrf
                         @method('put')
                         <tr>
@@ -43,6 +44,12 @@
                                 @enderror --}}
                             </td>
                             <td>
+                                <input type="text" name="quantity" class="form-control" value="{{$book->quantity}}" required>
+                                {{-- @error('name')
+                                <span class="badge" style="color: red">{{$message}}</span>
+                                @enderror --}}
+                            </td>
+                            <td>
                                 <input type="text" name="image" class="form-control" value="{{$book->image}}" required>
                                 {{-- @error('name')
                                 <span class="badge" style="color: red">{{$message}}</span>
@@ -50,7 +57,14 @@
                             </td>
 
                             <td>
-                                <input type="text" name="category_id" class="form-control" value="{{$book->category_id}}" required>
+                                <select class="form-control col-form-select"
+                                aria-label="Default select example">
+                            <option selected>Open this select menu</option>
+                            @foreach($categories as $category)
+                                <option value="{{$category->slug}}" @if($category->slug) selected @endif>{{$category->slug}}</option>
+                            @endforeach
+                        </select>
+                                {{-- <input type="text" name="category_id" class="form-control" value="{{$book->category_id}}" required> --}}
                                 {{-- @error('name')
                                 <span class="badge" style="color: red">{{$message}}</span>
                                 @enderror --}}

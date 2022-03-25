@@ -37,7 +37,22 @@
 
                     </div>
                 </figcaption>
-                <div class="bottom-wrap"> <a href="#" class="btn btn-primary float-right" data-abc="true"> Add To Cart</a>
+                {{-- <form class="cart clearfix" method="post"
+                        action="{{route('add-to-cart',['book_id' =>$book['id']])}}"
+                        >
+                           @csrf
+
+                            <button type="submit" class="btn amado-btn">Add to cart</button>
+                        </form> --}}
+                <div class="bottom-wrap">
+                    <form method="post"
+                        action="{{route('Add-To-Cart',['book_id' =>$book['id']])}}"
+                        >
+                           @csrf
+
+                            <button type="submit" class="btn amado-btn">Add to cart</button>
+                        </form>
+                     {{-- <a href="{{route('add-to-cart',['book_id' =>$book['id']])}}" class="btn btn-primary float-right" data-abc="true"> Add To Cart</a> --}}
                     <div class="price-wrap"> <span class="price h5">{{$book->price}}</span> <br> <small class="text-success">Free shipping</small> </div>
                 </div>
             </figure>

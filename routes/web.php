@@ -7,6 +7,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\admin\IndexController;
 use App\Http\Controllers\admin\UserController;
+use App\Http\Controllers\CartController;
+use App\Http\Controllers\OrderController;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,9 +22,6 @@ use App\Http\Controllers\admin\UserController;
 |
 */
 /******* Public Routes *********/
-// Route::get('/', function () {
-//     return view('index');
-// });
 Route::get('/home', function () {
     return view('home');
 });
@@ -38,14 +39,19 @@ Route::get('/shop', [ShopController::class,'productsList']);
 Route::get('/shop/category/{category:slug}', [ShopController::class,'productsCategoryList']);
 Route::get('/shop/book/{book:slug}', [ShopController::class,'singleProduct']);
 
+Route::get('/checkout', function () {
+    return view('checkout');
+});
+
 //cart routes
-// Route::get('/cart/view-cart', [CartController::class,'viewCart']);
-// Route::post('/cart/add-to-cart/{product_id}', [CartController::class,'addToCart'])->name('add-to-cart');
+Route::get('/cart/view-cart', [CartController::class,'viewCart']);
+Route::post('/cart/add-to-cart/{book_id}', [CartController::class,'addToCart'])->name('add-to-cart');
+Route::post('/cart/Add-To-Cart/{book_id}', [CartController::class,'addToCartFromShop'])->name('Add-To-Cart');
 // Route::get('/cart/update-cart', [CartController::class,'updateCart']);
-// Route::get('/cart/remove-item/{item_id}', [CartController::class,'removeItem']);
-// Route::get('/cart/checkout',[CartController::class,'checkout'])->name('checkout')->middleware('auth');
-// Route::post('/cart/checkout',[CartController::class,'placeOrder'])->name('place-order')->middleware('auth');
-// Route::get('/orders', [OrderController::class,'index']);
+Route::get('/cart/remove-item/{item_id}', [CartController::class,'removeItem']);
+Route::get('/cart/checkout',[CartController::class,'checkout'])->name('checkout')->middleware('auth');
+Route::post('/cart/checkout',[CartController::class,'placeOrder'])->name('place-order')->middleware('auth');
+Route::get('/orders', [OrderController::class,'index']);
 
 
 

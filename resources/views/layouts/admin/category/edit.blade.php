@@ -12,17 +12,23 @@
                 <thead>
                     <tr class="text-dark">
                         <th scope="col">Category Name</th>
-
+                        <th scope="col">Category Image</th>
                         <th scope="col"></th>
                     </tr>
                 </thead>
                 <tbody>
-                    <form action="{{route('admin.categories.update', $category)}}" method="POST">
+                    <form action="{{route('admin.categories.update', $category->id)}}" method="POST">
                         @csrf
                         @method('put')
                         <tr>
                             <td>
-                                <input type="text" name="category_name" class="form-control" value="{{$category->category_name}}" required>
+                                <input type="text" name="slug" class="form-control" value="{{$category->slug}}" required>
+                                {{-- @error('name')
+                                <span class="badge" style="color: red">{{$message}}</span>
+                                @enderror --}}
+                            </td>
+                            <td>
+                                <input type="text" name="img_src" class="form-control" value="{{$category->img_src}}" required>
                                 {{-- @error('name')
                                 <span class="badge" style="color: red">{{$message}}</span>
                                 @enderror --}}

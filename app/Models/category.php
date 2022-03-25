@@ -21,7 +21,8 @@ class category extends Model
 
 
     protected $fillable = [
-        'category_name',
+        'slug',
+        'img_src',
     ];
 
     public function books(){

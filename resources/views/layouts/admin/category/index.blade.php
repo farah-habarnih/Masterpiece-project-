@@ -13,6 +13,7 @@
                 <thead>
                     <tr class="text-dark">
                         <th scope="col">Category Name</th>
+                        <th scope="col">Category Image</th>
                         <th scope="col">Edit</th>
                         <th scope="col">Delete</th>
                     </tr>
@@ -20,9 +21,10 @@
                 <tbody>
                     @foreach ($categories as $category)
                     <tr>
-                        <td>{{$category->category_name}}</td>
+                        <td>{{$category->slug}}</td>
+                        <td><img src="{{$category->img_src}}"/></td>
                         <td>
-                            <form action="{{route('admin.categories.edit', $category)}}" method="get">
+                            <form action="{{route('admin.categories.edit', $category->id)}}" method="get">
                                 @csrf
                                 @method('get')
                                 <input type="submit" class="btn btn-success" value="Edit">

@@ -20,9 +20,9 @@ class BookController extends Controller
     public function index()
     {
         //
-        $books = Book::all();
-        $categories = Category::all();
-        return view('layouts.admin.book.index', compact('books','categories'));
+        $books = Book::with('category')->get();
+        // $categories = Category::all();
+        return view('layouts.admin.book.index', compact('books'));
     }
 
     /**
@@ -85,7 +85,8 @@ class BookController extends Controller
     {
         //
         $book = Book::find($id);
-        return view('layouts.admin.book.edit', compact('book'));
+        $categories = Category::all();
+        return view('layouts.admin.book.edit', compact('book','categories'));
     }
 
     /**
