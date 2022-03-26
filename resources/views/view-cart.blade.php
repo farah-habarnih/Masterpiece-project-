@@ -49,7 +49,7 @@
                                             <h5>{{$item['name']}}</h5>
                                         </td>
                                         <td class="price">
-                                            <span>{{$item['price']}}</span>
+                                            <span>${{$item['price']}}</span>
                                         </td>
                                         {{-- <td class="qty">
                                             <div class="qty-btn d-flex">

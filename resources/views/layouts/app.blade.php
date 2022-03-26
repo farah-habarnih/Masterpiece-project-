@@ -125,33 +125,30 @@
         </div>
         <div class="link-boxes">
           <ul class="box">
-            <li class="link_name">Company</li>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Contact us</a></li>
-            <li><a href="#">About us</a></li>
-            <li><a href="#">Get started</a></li>
-          </ul>
-          <ul class="box">
-            <li class="link_name">Services</li>
-            <li><a href="#">App design</a></li>
-            <li><a href="#">Web design</a></li>
-            <li><a href="#">Logo design</a></li>
-            <li><a href="#">Banner design</a></li>
+            <li class="link_name">Quick Links</li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about-us">About us</a></li>
+            <li><a href="{{ route('register') }}">Register</a></li>
           </ul>
           <ul class="box">
             <li class="link_name">Account</li>
-            <li><a href="#">Profile</a></li>
-            <li><a href="#">My account</a></li>
-            <li><a href="#">Prefrences</a></li>
-            <li><a href="#">Purchase</a></li>
+            <li><a href="{{ url('profile') }}">My Account</a></li>
+            <li><a href="{{ url('profile') }}">My Orders</a></li>
+            <li><a href="{{ route('login') }}">Login</a></li>
           </ul>
           <ul class="box">
+            <li class="link_name">Shop</li>
+            <li><a href="{{ url('/shop') }}">Shop</a></li>
+            <li><a href="{{ url('/shop') }}">Categories</a></li>
+            <li><a href="/cart/view-cart">Cart</a></li>
+          </ul>
+          {{-- <ul class="box">
             <li class="link_name">Courses</li>
             <li><a href="#">HTML & CSS</a></li>
             <li><a href="#">JavaScript</a></li>
             <li><a href="#">Photography</a></li>
             <li><a href="#">Photoshop</a></li>
-          </ul>
+          </ul> --}}
           {{-- <ul class="box input-box">
             <li class="link_name">Subscribe</li>
             <li><input type="text" placeholder="Enter your email" /></li>

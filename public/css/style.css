@@ -83,6 +83,7 @@ nav .nav-bar .logo a {
 .nav-bar .nav-links {
     margin-bottom: 0;
     display: flex;
+    /* flex-direction: column; */
     align-items: end;
 }
 
@@ -285,10 +286,10 @@ body.dark .search-field i {
         cursor: pointer;
     }
 
-    /* .nav-bar .nav-links {
+    .nav-bar .menu .nav-links {
         flex-direction: column;
-        padding-top: 30px;
-    } */
+        /* padding-top: 30px; */
+    }
 
     /* .nav-links li a {
         display: block;
@@ -1578,12 +1579,12 @@ td {
     color: white !important;
 }
 
-.container-fluid .row .col-md-8 button {
+/* .container-fluid .row .col-md-8 button {
     display: block !important;
     justify-content: center !important;
-}
+} */
 .col-md-4 {
-    margin-top: 4rem;
+    /* margin-top: 4rem; */
     /* margin-left: 0.1rem; */
 }
 .cart-img {
