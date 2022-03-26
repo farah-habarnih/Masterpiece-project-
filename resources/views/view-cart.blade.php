@@ -10,23 +10,32 @@
   </section>
     <div class="cart-table-area section-padding-100">
         <div class="container-fluid">
+
             <div class="row">
+                @if (session('success'))
+                <div class="alert alert-success">
+                    {{session('success')}}
+                </div>
+               @endif
                 <div class="col-md-8 col-lg-8">
                     <div class="cart-title mt-50">
-                        <h2>Shopping Cart</h2>
+                        <h2 class="heading-cart">Shopping Cart</h2>
                     </div>
                     @empty($cart)
-                        <h5> Your Cart is Empty</h5>
+                        <h5 class="heading-cart"> Your Cart is Empty <a href="/shop" class="link-cart">Back To Shop</a></h5>
+                        {{-- <button type="submit" class="btn-cart">
+                            <a href="/shop" class="link-cart">Back To Shop</a>
+                        </button> --}}
                         @else
                     <div class="cart-table clearfix">
                             <table class="table table-responsive">
                                 <thead>
                                 <tr>
-                                    <th></th>
-                                    <th>Name</th>
+                                    <th>Book Image</th>
+                                    <th>Book Name</th>
                                     <th>Price</th>
                                     <th>Quantity</th>
-                                    <th></th>
+                                    <th>Remove</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -34,7 +43,7 @@
 
                                     <tr>
                                         <td class="cart_product_img">
-                                            <a href="#"><img src="{{$item['image_url']}}" alt="Product"></a>
+                                            <a href="#"><img src="{{$item['image_url']}}" alt="Book image" class="cart-img"></a>
                                         </td>
                                         <td class="cart_product_desc">
                                             <h5>{{$item['name']}}</h5>
@@ -61,7 +70,7 @@
                                         <td>
                                             <a
                                             href="/cart/remove-item/{{$key}}"
-                                             class="btn btn-danger"><i class="fa-solid fa-circle-xmark"></i>remove</a>
+                                             class="link-cart"><i class="fa-solid fa-circle-xmark"></i>remove</a>
                                         </td>
                                     </tr>
                                 @endforeach
@@ -79,7 +88,7 @@
                             <li><span>total:</span> <span>${{$total}}</span></li>
                         </ul>
                         <div class="cart-btn mt-100">
-                            <a href="{{route('checkout')}}" class="btn amado-btn w-100">Checkout</a>
+                            <a href="{{route('checkout')}}" class="btn-contact">Checkout</a>
                         </div>
                     </div>
                         @endempty

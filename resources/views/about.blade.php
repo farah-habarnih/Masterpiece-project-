@@ -32,7 +32,7 @@
           Accusantium ea est commodi incidunt magni quia molestias
           perspiciatis, unde repudiandae quidem.
         </p>
-        <a href="#" class="btn-shop">learn more</a>
+        {{-- <a href="#" class="btn-contact">learn more</a> --}}
       </div>
     </div>
     <h2 class="heading"><span>Our Team</span></h2>

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Book;
 use App\Models\category;
 use App\Models\Contact;
+use App\Models\Order;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -61,9 +62,10 @@ class IndexController extends Controller
         $allUsers = $users->count();
         $allBooks = Book::all()->count();
         $allCategories = category::all()->count();
+        $allOrders = Order::all()->count();
         // $totalCount = DB::table('table_user')
         //     ->count();
-        return view('layouts.admin.index', compact('allUsers', 'allBooks','allCategories'));
+        return view('layouts.admin.index', compact('allUsers', 'allBooks','allCategories','allOrders'));
     }
 
     /**

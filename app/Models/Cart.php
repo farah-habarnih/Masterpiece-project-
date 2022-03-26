@@ -68,7 +68,7 @@ class Cart extends Model
             'town' => $request->town,
             'address' => $request->address,
             'zip' => $request->address,
-            'phone' => $request->address,
+            'phone' => $request->phone_number,
             'user_id' => $user->id,
             'comments' => $request->comments,
             'order_status' => 'Placed',

@@ -47,8 +47,8 @@
                 <i class="fa fa-address-book me-2 fa-3x text-primary"></i>
                 <div class="ms-3">
                 </a>
-                    <p class="mb-2">Total Contacts</p>
-                    {{-- <h6 class="mb-0">{{$allContacts}}</h6> --}}
+                    <p class="mb-2">Total Orders</p>
+                    <h6 class="mb-0">{{$allOrders}}</h6>
                 </div>
             </div>
         </div>

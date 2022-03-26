@@ -99,19 +99,19 @@
                                     </div>
                                 </div>
                     </div>
-                    @foreach($orders as $order)
-                    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+
+                    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab" style="overflow-x:auto;">
                         <table style="
-                         background-color: #fbaf32; " class="table">
+                         background-color: #FFF5FA; " class="table">
                             <thead>
                               <tr>
                                 <th scope="col">#</th>
-                                <th scope="col">book name</th>
-                                <th scope="col">quantity</th>
-                                <th scope="col">price</th>
-                                <th scope="col">image</th>
-                                <th scope="col">status</th>
-                                <th scope="col">Total</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Address</th>
+                                <th scope="col">town</th>
+                                <th scope="col">total</th>
+                                <th scope="col">Order Date</th>
+                                <th scope="col">Order Status</th>
 
 
                               </tr>
@@ -123,35 +123,26 @@
 
 
                                 </div> --}}
+                                @php
+                                $i=0;
 
-                              {{-- <tr>
-                                  @foreach($order->cart->items as $item)
-                                <th scope="row"></th>
-                                <td>{{$item['name']}}</td>
-                                <td>{{$item['quantity']}}</td>
-                                <td> {{$item['price']}}</td>
-                                <td> {{$item['image_url']}}</td>
-                                @endforeach
-                                <td> {{$order->order_status}}</td>
-                                <td>{{$order->total}}</td>
-                              </tr> --}}
-                              {{-- <tr>
-                                @foreach($order->cart->items as $item)
-                              <th scope="row"></th>
-                              <td>{{$item['name']}}</td>
-                              <td>{{$item['quantity']}}</td>
-                              <td> {{$item['price']}}</td>
-                              <td> {{$item['image_url']}}</td>
-                              @endforeach
-                              <td> {{$order->order_status}}</td>
-                              <td>{{$order->total}}</td>
-                            </tr> --}}
-
+                                @endphp
+                                @foreach($orders as $order)
+                              <tr>
+                                <th scope="row">{{ ++$i }}</th>
+                                <td>{{$order->name}}</td>
+                                <td>{{$order->address}}</td>
+                                <td> {{$order->town}}</td>
+                                <td> {{$order->total}}</td>
+                                <td> {{$order->created_at}}</td>
+                                <td>{{$order->order_status}}</td>
+                            </tr>
+                            @endforeach
                             </tbody>
                           </table>
 
                     </div>
-                    @endforeach
+                    {{-- @endforeach --}}
                 </div>
             </div>
         </div>

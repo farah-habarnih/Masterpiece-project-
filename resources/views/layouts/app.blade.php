@@ -45,7 +45,7 @@
 
           <ul class="nav-links">
             <li><a href="{{ url('/') }}">Home</a></li>
-            <li><a href="{{ url('/about-us') }}">About Us</a></li>
+            <li><a href="{{ url('/about-us') }}">About</a></li>
             <li><a href="{{ url('/shop') }}">Shop</a></li>
 
             @guest
@@ -112,7 +112,7 @@
       <div class="content">
         <div class="top">
           <div class="logo-details">
-            <i class="fab fa-slack"></i>
+            <i class="fas fa-book"></i>
             <span class="logo_name">ShareBook</span>
           </div>
           <div class="media-icons">
@@ -152,11 +152,11 @@
             <li><a href="#">Photography</a></li>
             <li><a href="#">Photoshop</a></li>
           </ul>
-          <ul class="box input-box">
+          {{-- <ul class="box input-box">
             <li class="link_name">Subscribe</li>
             <li><input type="text" placeholder="Enter your email" /></li>
             <li><input type="button" value="Subscribe" /></li>
-          </ul>
+          </ul> --}}
         </div>
       </div>
       <div class="bottom-details">

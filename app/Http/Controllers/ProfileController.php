@@ -14,11 +14,11 @@ public function profile()
 {
      $user_id=Auth::user()->id;
      $user=User::find($user_id);
-     $orders=Auth::user()->orders;
-     $orders->transform(function($order,$key){
-         $order->cart=unserialize($order->cart);
-         return $order;
-     });
+     $orders=$user->orders;
+    //  $orders->transform(function($order,$key){
+    //      $order->cart=unserialize($order->cart);
+    //      return $order;
+    //  });
     //  dd($orders);
     return view('profile',compact('user','orders'));
 }

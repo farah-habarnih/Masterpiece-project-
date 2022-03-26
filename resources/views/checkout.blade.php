@@ -1,11 +1,23 @@
 @extends('layouts.app')
 @section('content')
+<section class="home-top" id="home-top">
+    <div class="content">
+      <h3>Checkout</h3>
+
+      <a href="{{ url('/') }}">HOME / </a> <a href="/cart/checkout">Checkout</a>
+    </div>
+  </section>
     <div class="cart-table-area section-padding-100">
         <form
-        {{-- action="{{route('place-order')}}" --}}
+        action="{{route('place-order')}}"
          method="post">
             @csrf
             <div class="container-fluid">
+                @if (session('success'))
+                <div class="alert alert-success">
+                    {{session('success')}}
+                </div>
+               @endif
                 <div class="row">
                     <div class="col-12 col-lg-8">
                         <div class="checkout_details_area mt-50 clearfix">
@@ -55,7 +67,7 @@
                             </div>
 
                             <div class="cart-btn mt-100">
-                                <input type="submit" class="btn amado-btn w-100" value="Checkout"/>
+                                <input type="submit" class="btn-contact" value="Place Order"/>
                             </div>
                         </div>
                     </div>
