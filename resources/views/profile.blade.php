@@ -19,7 +19,9 @@
         <p class="updated">{!! session()->get('success') !!}</p></div>
         @endif
 
-     <form method="post" action="{{ route('users.edit') }}">
+     <form method="post"
+     action="{{ route('users.edit') }}"
+     >
         @csrf
 
         <div class="row">
@@ -52,7 +54,9 @@
                 </div>
             </div>
             <div class="col-md-2">
-                <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile" href="{{ route('users.edit',Auth::user()->id) }}"/>
+                <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile"
+                 href="{{ route('users.edit',Auth::user()->id) }}"
+                 />
             </div>
         </div>
         <div class='row'>
@@ -95,57 +99,59 @@
                                     </div>
                                 </div>
                     </div>
+                    @foreach($orders as $order)
                     <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                         <table style="
-                    background-color: #fbaf32; " class="table">
+                         background-color: #fbaf32; " class="table">
                             <thead>
                               <tr>
                                 <th scope="col">#</th>
-                                <th scope="col">Table number</th>
-                                <th scope="col">Date</th>
-                                <th scope="col">Time</th>
+                                <th scope="col">book name</th>
+                                <th scope="col">quantity</th>
+                                <th scope="col">price</th>
+                                <th scope="col">image</th>
                                 <th scope="col">status</th>
-                                <th scope="col">Note</th>
-                                <th scope="col">Action</th>
+                                <th scope="col">Total</th>
 
 
                               </tr>
                             </thead>
                             <tbody>
 
-                          {{-- <div style="display:none">
-                            {{ $count= $user->tables->count()}}
+                           {{-- <div style="display:none">
 
-                            {{ $count2=$count-$count+1 }}
+
+
                                 </div> --}}
-                                @php
-                                $i=0;
 
-                                @endphp
-
-                                    {{-- @foreach($user->tables as $table)
-                              <tr>
-
-                                 <th scope="row">{{ ++$i }}</th>
-                                <td>{{$table->number}}</td>
-                                <td> {{$table->pivot->date}}</td>
-                                <td> {{$table->pivot->time}}</td>
-                                <td> {{$table->pivot->status}}</td>
-                                <td> {{$table->pivot->note}}</td>
-                                <td> </form>
-                                    <form action="{{ url('/user-profile-delete/'.$table->pivot->id) }}" method="post">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="submit" class="btn btn-danger"><i class="fas fa-trash-alt"></i>Delete</button>
-                                    </form>
-                                </td>
-                                     {{-- {{$count2=$count2+1}} --}}
-                                      {{-- </tr>@endforeach --}}
+                              {{-- <tr>
+                                  @foreach($order->cart->items as $item)
+                                <th scope="row"></th>
+                                <td>{{$item['name']}}</td>
+                                <td>{{$item['quantity']}}</td>
+                                <td> {{$item['price']}}</td>
+                                <td> {{$item['image_url']}}</td>
+                                @endforeach
+                                <td> {{$order->order_status}}</td>
+                                <td>{{$order->total}}</td>
+                              </tr> --}}
+                              {{-- <tr>
+                                @foreach($order->cart->items as $item)
+                              <th scope="row"></th>
+                              <td>{{$item['name']}}</td>
+                              <td>{{$item['quantity']}}</td>
+                              <td> {{$item['price']}}</td>
+                              <td> {{$item['image_url']}}</td>
+                              @endforeach
+                              <td> {{$order->order_status}}</td>
+                              <td>{{$order->total}}</td>
+                            </tr> --}}
 
                             </tbody>
                           </table>
 
                     </div>
+                    @endforeach
                 </div>
             </div>
         </div>

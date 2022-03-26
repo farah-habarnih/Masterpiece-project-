@@ -24,9 +24,9 @@ modeToggle.addEventListener("click", () => {
 });
 
 // js code to toggle search box
-searchToggle.addEventListener("click", () => {
-    searchToggle.classList.toggle("active");
-});
+// searchToggle.addEventListener("click", () => {
+//     searchToggle.classList.toggle("active");
+// });
 
 //   js code to toggle sidebar
 sidebarOpen.addEventListener("click", () => {

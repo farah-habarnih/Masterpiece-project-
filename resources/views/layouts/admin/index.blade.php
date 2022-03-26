@@ -7,7 +7,7 @@
         <div class="col-sm-6 col-xl-3">
 
             <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
-                <a class="nav-item nav-link">
+                <a href="{{route('admin.categories')}}">
                 <i class="fas fa-calendar-check me-2 fa-3x text-primary"></i>
             </a>
                 <div class="ms-3">

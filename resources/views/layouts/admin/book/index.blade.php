@@ -16,6 +16,7 @@
                         <th scope="col">description</th>
                         <th scope="col">Category Name</th>
                         <th scope="col">price</th>
+                        <th scope="col">quantity</th>
                         <th scope="col">image</th>
                         <th scope="col">Edit</th>
                         <th scope="col">Delete</th>
@@ -28,6 +29,7 @@
                         <td>{{$book->description}}</td>
                         <td>{{$book->category->slug}}</td>
                         <td>{{$book->price}}</td>
+                        <td>{{$book->quantity}}</td>
                         <td><img src={{$book->image}}></td>
                         <td>
                             <form action="{{route('admin.books.edit', $book->id)}}" method="get">

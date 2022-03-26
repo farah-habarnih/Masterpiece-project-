@@ -16,7 +16,9 @@ class Order extends Model
         'name','email','address','town','zip','phone','comments','total','cart','user_id', 'order_status'
     ];
 
-
+    public function user() {
+        return $this->belongsTo(User::class);
+    }
     /**
      * One Order has many order details all the information that
      * related to the order stored in the order_details table.

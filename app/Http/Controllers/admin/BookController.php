@@ -58,8 +58,10 @@ class BookController extends Controller
             'book_name' => $request->book_name,
             'description' => $request->description,
             'price' => $request->price,
+            'quantity' => $request->quantity,
+            'slug' => $request->slug,
             'category_id' => $request->category_id,
-            'image' => $request->image
+            'image' => $request->image,
         ]);
         return redirect()->back()->with(['message' => 'Book added successfully']);
     }
@@ -104,6 +106,8 @@ class BookController extends Controller
             'book_name' => $request->book_name,
             'description' => $request->description,
             'price' => $request->price,
+            'quantity' => $request->quantity,
+            'slug' => $request->slug,
             'category_id' => $request->category_id,
             'image' => $request->image,
         ]);

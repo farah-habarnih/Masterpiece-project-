@@ -16,6 +16,7 @@
                         <th scope="col">price<span style="color: red">*</span></th>
                         <th scope="col">quantity<span style="color: red">*</span></th>
                         <th scope="col">image <small style="color: red"></small></th>
+                        <th scope="col">slug <small style="color: red"></small></th>
                         <th scope="col">category name <small style="color: red"></small></th>
                         <th scope="col"></th>
                     </tr>
@@ -38,13 +39,13 @@
                                 @enderror --}}
                             </td>
                             <td>
-                                <input type="text" name="price" class="form-control" value="{{$book->price}}" required>
+                                <input type="number" name="price" class="form-control" value="{{$book->price}}" required>
                                 {{-- @error('name')
                                 <span class="badge" style="color: red">{{$message}}</span>
                                 @enderror --}}
                             </td>
                             <td>
-                                <input type="text" name="quantity" class="form-control" value="{{$book->quantity}}" required>
+                                <input type="number" name="quantity" class="form-control" value="{{$book->quantity}}" required>
                                 {{-- @error('name')
                                 <span class="badge" style="color: red">{{$message}}</span>
                                 @enderror --}}
@@ -55,13 +56,18 @@
                                 <span class="badge" style="color: red">{{$message}}</span>
                                 @enderror --}}
                             </td>
-
                             <td>
-                                <select class="form-control col-form-select"
+                                <input type="text" name="slug" class="form-control" value="{{$book->slug}}" required>
+                                {{-- @error('name')
+                                <span class="badge" style="color: red">{{$message}}</span>
+                                @enderror --}}
+                            </td>
+                            <td>
+                                <select class="form-control col-form-select" name="category_id"
                                 aria-label="Default select example">
-                            <option selected>Open this select menu</option>
+                            {{-- <option selected>Open this select menu</option> --}}
                             @foreach($categories as $category)
-                                <option value="{{$category->slug}}" @if($category->slug) selected @endif>{{$category->slug}}</option>
+                                <option value="{{$category->id}}" @if($category->id) selected @endif>{{$category->slug}}</option>
                             @endforeach
                         </select>
                                 {{-- <input type="text" name="category_id" class="form-control" value="{{$book->category_id}}" required> --}}

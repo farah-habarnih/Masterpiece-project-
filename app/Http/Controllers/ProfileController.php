@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
+use App\Models\Cart;
 use Illuminate\Http\Request;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Hash;
 
 class ProfileController extends Controller
@@ -12,7 +14,13 @@ public function profile()
 {
      $user_id=Auth::user()->id;
      $user=User::find($user_id);
-    return view('profile',compact('user'));
+     $orders=Auth::user()->orders;
+     $orders->transform(function($order,$key){
+         $order->cart=unserialize($order->cart);
+         return $order;
+     });
+    //  dd($orders);
+    return view('profile',compact('user','orders'));
 }
 
 

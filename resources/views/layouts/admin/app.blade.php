@@ -77,6 +77,12 @@
                             <a href="{{route('admin.books.add')}}" class="nav-item nav-link">Add book</a>
                         </div>
                     </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fas fa-users me-2"></i>Orders</a>
+                        <div class="dropdown-menu bg-transparent border-0">
+                            <a href="{{route('admin.orders')}}" class="nav-item nav-link">Show Orders</a>
+                        </div>
+                    </div>
                     {{-- <a href="{{route('admin.contacts')}}" class="nav-item nav-link "><i class="fa fa-address-book me-2" ></i>Contacts</a> --}}
 
 

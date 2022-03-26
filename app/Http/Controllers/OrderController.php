@@ -16,13 +16,13 @@ class OrderController extends Controller
      */
     public function index()
     {
-        $cart = session()->get('cart');
+        // $cart = session()->get('cart');
 
-        Session::has('cart') ? Session::get('cart') : $cart = [];
+        // Session::has('cart') ? Session::get('cart') : $cart = [];
         // $total = Cart::calculateTotalAmount($cart); // calculate the total amount
         $orders  = Order::all();
-        var_dump($orders);
-        return view('public.order.view-order',compact('orders','cart'));
+        // var_dump($orders);
+        return view('layouts.admin.order.index',compact('orders'));
     }
 
     /**
@@ -63,9 +63,11 @@ class OrderController extends Controller
      * @param  \App\Models\Order  $order
      * @return \Illuminate\Http\Response
      */
-    public function edit(Order $order)
+    public function edit($id)
     {
-        //
+          //
+          $order = Order::find($id);
+          return view('layouts.admin.order.edit', compact('order'));
     }
 
     /**
@@ -75,9 +77,14 @@ class OrderController extends Controller
      * @param  \App\Models\Order  $order
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Order $order)
+    public function update(Request $request, $id)
     {
-        //
+        $order = Order::find($id);
+        $order->update([
+            'order_status' => $request->order_status,
+
+        ]);
+        return redirect()->back()->with(['message' => 'edit was successful']);
     }
 
     /**
